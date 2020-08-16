@@ -33,8 +33,8 @@ Jess = Family('Jess', 'Blank', 'Phil', 'Kitty',  'Unknown', 3, False)
 Mick = Family('Mick', 'Blank', 'Kitty', 'A.Foster', 'Unknown2', 2, True)
 Lou = Family('Louise', 'Blank', 'Mick', 'Kitty', 'A.Foster', 3, False)
 Kev = Family('Kevin', 'Blank', 'Kitty', 'A.Foster', 'Unkown2', 2, True)
-Dan = Family('Daniel', 'Blank', 'Kev', 'Kitty', 'A.Foster', 'Unknown2', 3, True)
-Sian = Family('Sian', 'Blank', 'Kev', 'Kitty', 'A.Foster', 'Unkown2', 3, False)
+Dan = Family('Daniel', 'Blank', 'Kev', 'Kitty', 'A.Foster', 3, True)
+Sian = Family('Sian', 'Blank', 'Kev', 'Kitty', 'A.Foster', 3, False)
 
 
 def chekFam(one, two):
@@ -65,14 +65,22 @@ def chekFam(one, two):
     elif one.grand == two.first and two.male == False:
         print('Nan')
     elif one.grand == two.first and two.male == True:
-        print('GrandDad')
+        print('Grand Dad')
+    elif one.first == two.grand and two.male == True:
+        print('Grandson')
+    elif one.first == two.grand and two.male == False:
+        print('Grand Daughter')
     elif one.parent == two.great and two.male == False:
-        print('Great neice')
+        print('Great Neice')
     elif one.parent == two.great and two.male == True:
-        print('Great nephew')
+        print('Great Nephew')
+    elif one.great == two.first and two.first != True:
+        print('Great Grand Mother')
+    elif one.first == two.great and two.great != True:
+        print('Great Grand Daughter')
 
 
-chekFam(Mick, Remy)   
+chekFam(Kitty, Remy)   
   
 
 
